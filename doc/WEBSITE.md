@@ -56,3 +56,38 @@ A l'aide de `app.get(route, callback)`, on a créé une route sur `/`, donc `htt
 `request` contient les informations sur la requête entrante, dans ce cas précis, nous n'en avons pas besoin.
 
 `response` doit être défini pour savoir ce que le serveur va renvoyer au client.
+
+# Créer un site web dynamique avec NodeJS
+
+A ce stade, normalement, vous devriez avoir un site web statique qui ne change pas dans le temps. Vous pouvez faire en sorte que votre site web affiche des choses différentes en fonction des paramètres que vous lui passez ou une base de données.
+
+Pour afficher des éléments dynamiques, il faut utiliser le package E(mbedded)JS.
+
+`npm install --save ejs`
+
+EJS permet d'utiliser des fichiers HTML particulier ayant l'extension `.ejs`.
+
+Ces fichiers permettent d'insérer du code Javascript dans des HTML pour se servir de ces fichiers HTML comme des "template".
+
+Ces templates prennent la forme de balises dans lesquelles vous pouvez utiliser du code Javascript et des variables que vous avez fournis du côté de Express.
+
+
+`src/index.js`
+```
+const ejs = require('ejs');
+
+app.set('view engine', 'ejs');
+
+function displayUserEmail(request, response) {
+	response.render('userEmail.ejs', { user: { email: "jean.moulin@epitech.eu" } });
+}
+
+app.get('/userEmail/', displayUserEmail);
+```
+
+`views/userEmail.ejs`
+```
+<div>
+	<%= user.email %>
+</div>
+```
