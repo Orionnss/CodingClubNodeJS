@@ -1,0 +1,16 @@
+{
+  "name": "coding_club_nodejs",
+  "version": "1.0.0",
+  "description": "The coding club course for Epitech Student",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "cyrille siouffi, ludovic dussaud",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.1"
+  }
+}
