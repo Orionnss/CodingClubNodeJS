@@ -6,7 +6,7 @@ Pour créer un site web basique avec Node.js, nous allons avant-tout avoir besoi
 
 On va mettre le code de base dans un fichier `.js` quelconque (par exemple `src/index.js`)
 
-```
+```Javascript
 const	express = require('express');
 const	app = express();
 const	PORT = 4242;
@@ -36,7 +36,7 @@ Cette partie s'appelle la **route**. On peut créer différents embronchements p
 
 Pour créer une route avec Express :
 
-```
+```Javascript
 const	path = require('path');
 
 function mainRoute(request, response)
@@ -73,7 +73,7 @@ Ces templates prennent la forme de balises dans lesquelles vous pouvez utiliser 
 
 
 `src/index.js`
-```
+```Javascript
 const ejs = require('ejs');
 
 app.set('view engine', 'ejs');
@@ -86,7 +86,7 @@ app.get('/userEmail/', displayUserEmail);
 ```
 
 `views/userEmail.ejs`
-```
+```HTML
 <div>
 	<%= user.email %>
 </div>
